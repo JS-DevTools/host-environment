@@ -1,6 +1,6 @@
 {
   "name": "host-environment",
-  "version": "3.2.14",
+  "version": "0.0.1",
   "description": "Easily detect what host environment your code is running in",
   "keywords": [
     "host",

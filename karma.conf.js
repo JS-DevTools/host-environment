@@ -1,11 +1,8 @@
 // Karma config
 // https://karma-runner.github.io/0.12/config/configuration-file.html
+// https://jsdevtools.org/karma-config/
 
-// @ts-check
 "use strict";
+const { karmaConfig } = require("karma-config");
 
-const karmaConfig = require("karma-config").default;
-
-module.exports = karmaConfig({
-  typescript: true,
-});
+module.exports = karmaConfig({ sourceDir: "esm" });

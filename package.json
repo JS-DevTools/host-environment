@@ -25,7 +25,6 @@
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "browser": {
-    "./src/node.ts": "./src/browser.ts",
     "./cjs/node.js": "./cjs/browser.js",
     "./esm/node.js": "./esm/browser.js"
   },
@@ -59,7 +58,7 @@
     "eslint-config-modular": "^6.0.0",
     "karma": "^4.0.0",
     "karma-cli": "^2.0.0",
-    "karma-config": "0.0.4",
+    "karma-config": "1.2.0",
     "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
     "nyc": "^13.1.0",

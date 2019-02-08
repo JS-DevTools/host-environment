@@ -3,13 +3,13 @@
 const { host } = require("../../");
 const { expect } = require("chai");
 
-describe("Environment variables", function () {
+describe("Environment variables", () => {
 
-  it("host.env should be an object", function () {
+  it("host.env should be an object", () => {
     expect(host.env).to.be.an("object");
   });
 
-  it("all keys should be valid environment variable names", function () {
+  it("all keys should be valid environment variable names", () => {
     let allowedCharacters;
 
     if (host.os.windows) {
@@ -24,7 +24,7 @@ describe("Environment variables", function () {
     }
   });
 
-  it("all values should be strings", function () {
+  it("all values should be strings", () => {
     for (let key of Object.keys(host.env)) {
       let value = host.env[key];
       expect(value).to.be.a("string");

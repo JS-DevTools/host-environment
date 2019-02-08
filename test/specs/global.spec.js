@@ -1,6 +1,6 @@
 "use strict";
 
-const host = require("../../");
+const { host } = require("../../");
 const { expect } = require("chai");
 
 describe("The global object", function () {

@@ -1,7 +1,7 @@
 "use strict";
 
-const defaultExport = require("../../");
-const { host: namedExport } = require("../../");
+const commonJSExport = require("../../");
+const { default: defaultExport, host: namedExport } = require("../../");
 const { expect } = require("chai");
 
 describe("package exports", () => {
@@ -16,11 +16,26 @@ describe("package exports", () => {
     expect(host).to.have.property("toJSON");
   }
 
-  it("should export the host object as the default export", () => {
+  if (typeof window === "undefined") {
+
+    it("should export the host object as the default CommonJS export", () => {
+      assertHostObject(commonJSExport);
+    });
+
+  }
+  else {
+
+    it("should not export a default CommonJS export", () => {
+      expect(commonJSExport).to.have.keys(["default", "host"]);
+    });
+
+  }
+
+  it("should export the host object as the default ESM export", () => {
     assertHostObject(defaultExport);
   });
 
-  it("should export the host object as a named export", () => {
+  it("should export the host object as a named ESM export", () => {
     assertHostObject(namedExport);
   });
 

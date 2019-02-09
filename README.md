@@ -3,6 +3,16 @@ Host Environment
 
 ### Easily detect what host environment your code is running in
 
+[![Build Status](https://api.travis-ci.com/JS-DevTools/host-environment.svg?branch=master)](https://travis-ci.com/JS-DevTools/host-environment)
+[![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/host-environment)
+
+[![npm](https://img.shields.io/npm/v/host-environment.svg)](https://www.npmjs.com/package/host-environment)
+[![Dependencies](https://david-dm.org/JS-DevTools/host-environment.svg)](https://david-dm.org/JS-DevTools/host-environment)
+[![License](https://img.shields.io/npm/l/host-environment.svg)](LICENSE)
+
+[![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/host-environment)
+
+
 When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), you often end up needing to know what environment your code is running in.  Maybe some functionality is only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.
 
 **Host Environment** makes it easy to write that kind of conditional code.

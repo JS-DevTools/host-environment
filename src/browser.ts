@@ -1,4 +1,4 @@
-import { Browsers, BrowsersRecord, Host, OSInfo, OSInfoRecord, EnvironmentVariables } from "./host";
+import { Browsers, BrowsersRecord, EnvironmentVariables, Host, OSInfo, OSInfoRecord } from "./host";
 import { toJSON } from "./to-json";
 
 /**

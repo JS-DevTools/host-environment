@@ -31,4 +31,19 @@ describe("Environment variables", () => {
     }
   });
 
+  // NOTE: This test works in browsers because of karma-host-environment
+  it("should have environment variables", () => {
+    expect(host.env).not.to.be.empty;
+  });
+
+  // NOTE: This test works in browsers because of karma-host-environment
+  it("should have standard environment variables", () => {
+    if (host.os.windows) {
+      expect(host.env).to.have.property("Path");
+    }
+    else {
+      expect(host.env).to.have.property("PATH");
+    }
+  });
+
 });

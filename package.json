@@ -1,6 +1,6 @@
 {
   "name": "host-environment",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Easily detect what host environment your code is running in",
   "keywords": [
     "host",
@@ -61,7 +61,7 @@
     "eslint-config-modular": "^6.0.0",
     "karma": "^4.0.0",
     "karma-cli": "^2.0.0",
-    "karma-config": "^1.4.0",
+    "karma-config": "^1.4.1",
     "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
     "nyc": "^13.2.0",

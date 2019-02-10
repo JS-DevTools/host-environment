@@ -71,6 +71,11 @@ describe("Browser environment", () => {
       expect(browser.patchVersion).to.be.a("number");
     });
 
+    it("browser.vXX should be set", () => {
+      let browser = getCurrentBrowser();
+      expect(browser["v" + browser.majorVersion]).to.be.true;
+    });
+
     it("browser.mobile should be set", () => {
       let browser = getCurrentBrowser();
       expect(browser.mobile).to.be.a("boolean");

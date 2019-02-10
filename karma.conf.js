@@ -10,22 +10,4 @@ module.exports = karmaConfig({
   browsers: {
     ie: true,
   },
-
-  config: {
-    webpack: {
-      module: {
-        rules: [
-          {
-            test: /\.m?js$/,
-            use: {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"]
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
 });

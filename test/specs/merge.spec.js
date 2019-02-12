@@ -9,7 +9,7 @@ describe("host.merge()", () => {
 
   // Reset the `host` object back to its original state after each test
   afterEach("Reset the host object", () => {
-    Object.assign(host, copy(originalHost));
+    assign(host, copy(originalHost));
     for (let key of Object.keys(host)) {
       if (!(key in originalHost)) {
         delete host[key];
@@ -34,7 +34,7 @@ describe("host.merge()", () => {
       regexp: /xyz/,
     });
 
-    expect(host).to.deep.equal(Object.assign(clone, {
+    expect(host).to.deep.equal(assign(clone, {
       boolean: true,
       string: "hello, world",
       number: 123.456,
@@ -54,7 +54,7 @@ describe("host.merge()", () => {
       undefinedValue: undefined,
     });
 
-    expect(host).to.deep.equal(Object.assign(clone, {
+    expect(host).to.deep.equal(assign(clone, {
       boolean: false,
       string: "",
       number: 0,
@@ -84,7 +84,7 @@ describe("host.merge()", () => {
       }
     });
 
-    expect(host).to.deep.equal(Object.assign(clone, {
+    expect(host).to.deep.equal(assign(clone, {
       emptyObject: {},
       object: {
         boolean: true,
@@ -115,10 +115,10 @@ describe("host.merge()", () => {
       }
     });
 
-    expect(host).to.deep.equal(Object.assign(clone, {
+    expect(host).to.deep.equal(assign(clone, {
       node: false,
       browser: false,
-      os: Object.assign({}, clone.os, {
+      os: assign({}, clone.os, {
         windows95: false,
         windowsVista: true,
       })
@@ -158,26 +158,38 @@ describe("host.merge()", () => {
    * Helper function to create deep copies of the `host` object.
    */
   function copy (source) {
-    let clone = Object.assign({}, source);
-    clone.os = Object.assign({}, source.os);
-    clone.env = Object.assign({}, source.env);
+    let clone = assign({}, source);
+    clone.os = assign({}, source.os);
+    clone.env = assign({}, source.env);
 
     if (source.node) {
-      clone.node = Object.assign({}, source.node);
+      clone.node = assign({}, source.node);
     }
 
     if (source.browser) {
       clone.browser = {
-        IE: source.browser.IE ? Object.assign({}, source.browser.IE) : source.browser.IE,
-        edge: source.browser.edge ? Object.assign({}, source.browser.edge) : source.browser.edge,
-        chrome: source.browser.chrome ? Object.assign({}, source.browser.chrome) : source.browser.chrome,
-        firefox: source.browser.firefox ? Object.assign({}, source.browser.firefox) : source.browser.firefox,
-        safari: source.browser.safari ? Object.assign({}, source.browser.safari) : source.browser.safari,
+        IE: source.browser.IE ? assign({}, source.browser.IE) : source.browser.IE,
+        edge: source.browser.edge ? assign({}, source.browser.edge) : source.browser.edge,
+        chrome: source.browser.chrome ? assign({}, source.browser.chrome) : source.browser.chrome,
+        firefox: source.browser.firefox ? assign({}, source.browser.firefox) : source.browser.firefox,
+        safari: source.browser.safari ? assign({}, source.browser.safari) : source.browser.safari,
         mobile: source.browser.mobile,
       };
     }
 
     return clone;
+  }
+
+  /**
+   * A simple implementation of `Object.assign()`, since IE 11 doesn't support it.
+   */
+  function assign (target, ...sources) {
+    for (let source of sources) {
+      for (let key of Object.keys(source)) {
+        target[key] = source[key];
+      }
+    }
+    return target;
   }
 
   /**

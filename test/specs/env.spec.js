@@ -31,15 +31,23 @@ describe("Environment variables", () => {
     }
   });
 
-  // NOTE: This test works in browsers because of karma-host-environment
-  it("should have environment variables", () => {
-    expect(host.env).not.to.be.empty;
-  });
+  if (typeof window === "object") {
 
-  // NOTE: This test works in browsers because of karma-host-environment
-  it("should have standard environment variables", () => {
-    let path = host.env.PATH || host.env.Path;
-    expect(path).not.to.be.empty;
-  });
+    it("should not have any environment variables", () => {
+      expect(host.env).to.be.empty;
+    });
 
+  }
+  else {
+
+    it("should have environment variables", () => {
+      expect(host.env).not.to.be.empty;
+    });
+
+    it("should have standard environment variables", () => {
+      let path = host.env.PATH || host.env.Path;
+      expect(path).not.to.be.empty;
+    });
+
+  }
 });

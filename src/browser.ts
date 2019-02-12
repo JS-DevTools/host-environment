@@ -1,4 +1,5 @@
 import { Browsers, BrowsersRecord, EnvironmentVariables, Host, OSInfo, OSInfoRecord } from "./host";
+import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
 /**
@@ -9,9 +10,13 @@ export const host: Host = {
   os: getOSInfo(),
   node: false,
   browser: getBrowserInfo(),
-  env: getEnvironmentVariables(),
+  env: {},
+  merge,
   toJSON,
 };
+
+// Merge the global `host` object (if it exists)
+mergeGlobalHost(host, host.global.host);
 
 /**
  * Returns information about the current Browser host.
@@ -90,27 +95,4 @@ function getOSInfo(): OSInfo {
   }
 
   return osInfo;
-}
-
-/**
- * Returns the host's environment variables, if possible.
- *
- * Environment variables aren't normally accessible in web browsers, but this function checks
- * for a global `host.env` object with environment variables. This allows things like
- * karma-host-environment to expose host environment variables.
- *
- * @see https://jsdevtools.org/karma-host-environment/
- */
-function getEnvironmentVariables(): EnvironmentVariables {
-  let global = window as Window & { host?: Partial<Host> };
-
-  // If there's a global `host.env` object with environment variables, then use it.
-  if (global.host
-  && global.host.env
-  && typeof global.host.env === "object"
-  && Object.keys(global.host.env).length > 0) {
-    return global.host.env;
-  }
-
-  return {};
 }

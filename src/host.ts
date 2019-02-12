@@ -36,6 +36,15 @@ export interface Host {
   browser: false | Browsers;
 
   /**
+   * Deep-merges the given object with the Host object. This is an easy way for other libraries
+   * and tools to extend the Host object with additional fields and/or override existing fields.
+   *
+   * @param props - An object whose properties will be merged with the Host object.
+   * @returns - The Host object with the merged properties
+   */
+  merge<T>(props: T): Host & T;
+
+  /**
    * Returns a copy of the host object that can be safely converted to JSON.
    */
   toJSON(): HostJSON;

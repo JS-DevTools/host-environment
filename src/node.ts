@@ -1,4 +1,5 @@
 import { Host, NodeInfo, OSInfo } from "./host";
+import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
 /**
@@ -10,8 +11,12 @@ export const host: Host = {
   node: getNodeInfo(),
   browser: false,
   env: process.env,
+  merge,
   toJSON,
 };
+
+// Merge the global `host` object (if it exists)
+mergeGlobalHost(host, host.global.host);
 
 /**
  * Returns information about the current Node.js host.

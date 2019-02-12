@@ -26,7 +26,7 @@ describe("package exports", () => {
   else {
 
     it("should not export a default CommonJS export", () => {
-      expect(commonJSExport).to.have.keys(["default", "host"]);
+      expect(commonJSExport).to.have.keys("default", "host");
     });
 
   }

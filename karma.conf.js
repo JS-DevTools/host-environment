@@ -10,4 +10,9 @@ module.exports = karmaConfig({
   browsers: {
     ie: true,
   },
+  config: {
+    // Prevent Karma-Config from using the "karma-host-environment" framework,
+    // which would cause obvious conflicts with this project
+    frameworks: ["mocha"],
+  }
 });

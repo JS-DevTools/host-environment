@@ -1,6 +1,6 @@
 {
   "name": "host-environment",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Easily detect what host environment your code is running in",
   "keywords": [
     "host",
@@ -53,15 +53,15 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "@types/node": "^11.9.0",
+    "@types/node": "^11.9.3",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.6.1",
-    "eslint-config-modular": "^6.0.0",
+    "eslint-config-modular": "^7.0.0",
     "karma": "^4.0.0",
     "karma-cli": "^2.0.0",
-    "karma-config": "^1.4.1",
+    "karma-config": "^1.4.2",
     "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
     "nyc": "^13.2.0",

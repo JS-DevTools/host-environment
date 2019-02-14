@@ -13,9 +13,14 @@ Host Environment
 [![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/host-environment)
 
 
-When writing [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), you often end up needing to know what environment your code is running in.  Maybe some functionality is only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.
+Host Environment is a [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) library that makes it easy to detect what host environment your code is running in.  It lets you answer questions like:
 
-**Host Environment** makes it easy to write that kind of conditional code.
+- Am I running in Node.js or a web browser?
+- Is this Node 8.x or newer?
+- Are we in Internet Explorer?
+- Is this a Windows computer?
+
+Maybe some parts of your app are only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.  Or maybe you need to [conditionally run tests](https://jsdevtools.org/karma-host-environment/) in different environments.  Whatever your reason, Host Environment can help.
 
 
 

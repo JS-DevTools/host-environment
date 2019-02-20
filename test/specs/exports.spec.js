@@ -6,7 +6,7 @@ const { expect } = require("chai");
 
 describe("package exports", () => {
 
-  function assertHostObject (host) {
+  function isHostObject (host) {
     expect(host).to.be.an("object");
     expect(host).to.have.property("global");
     expect(host).to.have.property("os");
@@ -14,12 +14,14 @@ describe("package exports", () => {
     expect(host).to.have.property("node");
     expect(host).to.have.property("browser");
     expect(host).to.have.property("toJSON");
+
+    return true;
   }
 
   if (typeof window === "undefined") {
 
     it("should export the host object as the default CommonJS export", () => {
-      assertHostObject(commonJSExport);
+      expect(commonJSExport).to.satisfy(isHostObject);
     });
 
   }
@@ -32,11 +34,11 @@ describe("package exports", () => {
   }
 
   it("should export the host object as the default ESM export", () => {
-    assertHostObject(defaultExport);
+    expect(defaultExport).to.satisfy(isHostObject);
   });
 
   it("should export the host object as a named ESM export", () => {
-    assertHostObject(namedExport);
+    expect(namedExport).to.satisfy(isHostObject);
   });
 
 });

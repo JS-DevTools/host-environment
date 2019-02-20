@@ -1,5 +1,5 @@
 // tslint:disable: no-default-export
-import { host } from "./node";
+import { host } from "./isomorphic.node";
 
 // Export type definitions as named exports
 export * from "./host";

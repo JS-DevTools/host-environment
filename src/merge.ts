@@ -1,6 +1,7 @@
 import { Host } from "./host";
 
-type POJO = Record<string, unknown>;
+// tslint:disable-next-line: no-any
+type POJO = Record<string, any>;
 
 /**
  * Deep-merges the given object with the Host object.

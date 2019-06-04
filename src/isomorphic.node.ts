@@ -1,4 +1,4 @@
-import { Host, NodeInfo, OSInfo } from "./host";
+import { Global, Host, NodeInfo, OSInfo } from "./host";
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
@@ -6,7 +6,7 @@ import { toJSON } from "./to-json";
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
-  global,
+  global: global as Global,
   os: getOSInfo(),
   node: getNodeInfo(),
   browser: false,

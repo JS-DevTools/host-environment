@@ -1,4 +1,4 @@
-import { Browsers, BrowsersRecord, EnvironmentVariables, Host, OSInfo, OSInfoRecord } from "./host";
+import { Browsers, BrowsersRecord, Global, Host, OSInfo, OSInfoRecord } from "./host";
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
@@ -6,7 +6,7 @@ import { toJSON } from "./to-json";
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
-  global: window,
+  global: window as Global,
   os: getOSInfo(),
   node: false,
   browser: getBrowserInfo(),

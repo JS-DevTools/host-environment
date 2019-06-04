@@ -72,17 +72,25 @@ npm install host-environment
 
 Usage
 --------------------------
-When using ES2015 syntax, you can simply `import` the `host` object:
+When using Host Environment in Node.js apps, you'll probably want to use **CommonJS** syntax:
+
+```javascript
+const host = require("host-environment");
+```
+
+When using a transpiler such as [Babel](https://babeljs.io/) or [TypeScript](https://www.typescriptlang.org/), or a bundler such as [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/), you can use **ECMAScript modules** syntax instead:
 
 ```javascript
 import host from "host-environment";
 ```
 
-When using CommonJS syntax, we recommend that you `require()` the `host` object as a named export to ensure correct behavior with bundling tools like Webpack, Rollup, etc.
 
-```javascript
-const { host } = require("host-environment");
-```
+
+Browser support
+--------------------------
+Host Environment supports recent versions of every major web browser.  Older browsers may require [Babel](https://babeljs.io/) and/or [polyfills](https://babeljs.io/docs/en/next/babel-polyfill).
+
+To use Host Environment in a browser, you'll need to use a bundling tool such as [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/), [Parcel](https://parceljs.org/), or [Browserify](http://browserify.org/). Some bundlers may require a bit of configuration, such as setting `browser: true` in [rollup-plugin-resolve](https://github.com/rollup/rollup-plugin-node-resolve).
 
 
 

@@ -13,7 +13,7 @@ describe("Environment variables", () => {
     let allowedCharacters;
 
     if (host.os.windows) {
-      allowedCharacters = /^[a-zA-Z0-9_()-]+$/;
+      allowedCharacters = /^[a-zA-Z0-9_%()-]+$/;
     }
     else {
       allowedCharacters = /^[a-zA-Z0-9_%-]+$/;

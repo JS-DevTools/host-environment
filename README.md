@@ -10,7 +10,7 @@ Host Environment
 [![Dependencies](https://david-dm.org/JS-DevTools/host-environment.svg)](https://david-dm.org/JS-DevTools/host-environment)
 [![License](https://img.shields.io/npm/l/host-environment.svg)](LICENSE)
 
-[![OS and Browser Compatibility](https://jsdevtools.org/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/host-environment)
+[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://travis-ci.com/JS-DevTools/host-environment)
 
 
 Host Environment is a [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) library that makes it easy to detect what host environment your code is running in.  It lets you answer questions like:
@@ -20,7 +20,7 @@ Host Environment is a [universal JavaScript](https://medium.com/@mjackson/univer
 - Are we in Internet Explorer?
 - Is this a Windows computer?
 
-Maybe some parts of your app are only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.  Or maybe you need to [conditionally run tests](https://jsdevtools.org/karma-host-environment/) in different environments.  Whatever your reason, Host Environment can help.
+Maybe some parts of your app are only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.  Or maybe you need to [conditionally run tests](https://jstools.dev/karma-host-environment/) in different environments.  Whatever your reason, Host Environment can help.
 
 
 
@@ -55,7 +55,7 @@ if (host.node) {
 
 Related Projects
 --------------------------
-- [karma-host-environment](https://jsdevtools.org/karma-host-environment/)<br>
+- [karma-host-environment](https://jstools.dev/karma-host-environment/)<br>
   Access environment variables and other system info in your browser tests.
 
 
@@ -118,7 +118,7 @@ This property is an object with the following structure:
 ### `host.env`
 This property is an object containing environment variables as key/value strings.  When running in Node.js, it is set to [`process.env`](https://nodejs.org/api/process.html#process_process_env).
 
-When running in a web browser, it is usually an empty object, since web browsers don't have access to environment variables. However, when paired with tools like [karma-host-environment](https://jsdevtools.org/karma-host-environment/), it's possible to work-around this limitation and allow you to access environment variables in the browser.
+When running in a web browser, it is usually an empty object, since web browsers don't have access to environment variables. However, when paired with tools like [karma-host-environment](https://jstools.dev/karma-host-environment/), it's possible to work-around this limitation and allow you to access environment variables in the browser.
 
 ```javascript
 {
@@ -206,6 +206,6 @@ Big Thanks To
 --------------------------
 Thanks to these awesome companies for their support of Open Source developers ❤
 
-[![Travis CI](https://jsdevtools.org/img/badges/travis-ci.svg)](https://travis-ci.com)
-[![SauceLabs](https://jsdevtools.org/img/badges/sauce-labs.svg)](https://saucelabs.com)
-[![Coveralls](https://jsdevtools.org/img/badges/coveralls.svg)](https://coveralls.io)
+[![Travis CI](https://jstools.dev/img/badges/travis-ci.svg)](https://travis-ci.com)
+[![SauceLabs](https://jstools.dev/img/badges/sauce-labs.svg)](https://saucelabs.com)
+[![Coveralls](https://jstools.dev/img/badges/coveralls.svg)](https://coveralls.io)

@@ -19,7 +19,7 @@ export interface Host {
    * Environment variables aren't accessible in web browsers, so this object will be empty.
    * However, you can use Karma-Host-Environment to access environment variables when testing in browsers.
    *
-   * @see https://jsdevtools.org/karma-host-environment/
+   * @see https://jstools.dev/karma-host-environment/
    */
   env: EnvironmentVariables;
 

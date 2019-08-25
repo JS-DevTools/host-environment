@@ -30,7 +30,7 @@ export function merge<T>(this: Host, props: T): Host & T {
  * For example, Karma-Host-Environment uses this to expose the Karma Server's host info
  * to web browser test scripts.
  *
- * @see https://jsdevtools.org/karma-host-environment/
+ * @see https://jstools.dev/karma-host-environment/
  */
 export function mergeGlobalHost(localHost: Host, globalHost: unknown) {
   if (isPOJO(globalHost)) {

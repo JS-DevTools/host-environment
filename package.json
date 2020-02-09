@@ -51,22 +51,22 @@
     "release": "npm run upgrade && npm run clean && npm run build && npm test && npm run bump"
   },
   "devDependencies": {
-    "@types/node": "^12.12.5",
+    "@jsdevtools/eslint-config-modular": "^8.0.0",
+    "@jsdevtools/karma-config": "^2.0.0",
+    "@jsdevtools/tslint-modular": "^2.0.1",
+    "@jsdevtools/version-bump-prompt": "^6.0.0",
+    "@types/node": "^13.7.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.7",
-    "eslint": "^6.6.0",
-    "@jsdevtools/eslint-config-modular": "^7.0.1",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
     "karma": "^4.4.1",
     "karma-cli": "^2.0.0",
-    "@jsdevtools/karma-config": "^1.5.7",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.1",
     "npm-check": "^5.9.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "shx": "^0.3.2",
-    "tslint": "^5.20.0",
-    "@jsdevtools/tslint-modular": "^1.6.0",
-    "typescript": "^3.6.4",
-    "typescript-tslint-plugin": "^0.5.4",
-    "@jsdevtools/version-bump-prompt": "^5.0.5"
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5",
+    "typescript-tslint-plugin": "^0.5.5"
   }
 }

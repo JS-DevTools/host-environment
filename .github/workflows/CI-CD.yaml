@@ -53,7 +53,7 @@ jobs:
         run: npm run coverage:node
 
       - name: Run browser tests
-        run: npm run coverage:brwoser
+        run: npm run coverage:browser
 
       - name: Combine code coverage data into a single file
         run: |

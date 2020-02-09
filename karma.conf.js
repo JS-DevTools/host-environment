@@ -46,7 +46,7 @@ module.exports = karmaConfig({
       // eslint-disable-next-line camelcase
       Safari_SauceLabs: {
         base: "SauceLabs",
-        platform: "macOS",
+        platform: "macOS 10.15",
         browserName: "safari",
       }
     }

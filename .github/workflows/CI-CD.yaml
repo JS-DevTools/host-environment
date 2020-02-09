@@ -24,8 +24,8 @@ jobs:
       fail-fast: true
       matrix:
         os:
-          # - ubuntu-latest
-          - macos-latest
+          - ubuntu-latest
+          # - macos-latest
           # - windows-latest
         node:
           # - 10
@@ -54,6 +54,9 @@ jobs:
 
       - name: Run browser tests
         run: npm run coverage:browser
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
       - name: Combine code coverage data into a single file
         run: |

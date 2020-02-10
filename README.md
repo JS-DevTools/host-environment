@@ -19,6 +19,7 @@ Host Environment is a [universal JavaScript](https://medium.com/@mjackson/univer
 - Is this Node 8.x or newer?
 - Are we in Internet Explorer?
 - Is this a Windows computer?
+- Are we running in a CI/CD environment?
 
 Maybe some parts of your app are only available in Node and not in web browsers.  Or maybe you need to determine whether to load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library.  Or maybe you need to [conditionally run tests](https://jstools.dev/karma-host-environment/) in different environments.  Whatever your reason, Host Environment can help.
 
@@ -132,6 +133,20 @@ When running in a web browser, it is usually an empty object, since web browsers
   HOME: '/Users/maciej',
   LOGNAME: 'maciej',
   _: '/usr/local/bin/node'
+}
+```
+
+
+### `host.ci`
+When running on a [known CI/CD host](https://www.npmjs.com/package/@qawolf/ci-info#supported-ci-tools), this property is an object containing informaation about the CI/CD host and the job that's being run.
+
+When running outside of a CI/CD host, this property is `false`. Since CI/CD hosts are detected based on the presence of environment variables, this property will usually be `false` when running in a web browser (where environment variables aren't accessible). However, when paired with tools like [karma-host-environment](https://jstools.dev/karma-host-environment/), it's possible to work-around this limitation and allow you to access CI/CD information in the browser.
+
+```javascript
+{
+  name: "Travis CI",    // The name of the CI/CD host
+  TRAVIS: true,         // The CI/CD host as a boolean
+  pr: true,             // Whether the CI/CD job was triggered by a pull-request
 }
 ```
 

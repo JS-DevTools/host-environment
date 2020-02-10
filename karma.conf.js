@@ -19,12 +19,5 @@ module.exports = karmaConfig({
     // Prevent Karma-Config from using the "karma-host-environment" framework,
     // which would cause obvious conflicts with this project
     frameworks: ["mocha"],
-
-    customLaunchers: {
-      // eslint-disable-next-line camelcase
-      Edge_SauceLabs: {
-        version: "18.17763"
-      }
-    }
   }
 });

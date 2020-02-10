@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@jsdevtools/eslint-config-modular": "^8.0.0",
-    "@jsdevtools/karma-config": "^3.0.1",
+    "@jsdevtools/karma-config": "^3.0.2",
     "@jsdevtools/tslint-modular": "^2.0.1",
     "@jsdevtools/version-bump-prompt": "^6.0.0",
     "@types/node": "^13.7.0",

@@ -8,12 +8,26 @@ describe("package exports", () => {
 
   function isHostObject (host) {
     expect(host).to.be.an("object");
-    expect(host).to.have.property("global");
-    expect(host).to.have.property("os");
-    expect(host).to.have.property("env");
-    expect(host).to.have.property("node");
-    expect(host).to.have.property("browser");
-    expect(host).to.have.property("toJSON");
+
+    let keys = Object.keys(host);
+
+    // Ignore the default and named exports
+    for (let key of ["default", "host"]) {
+      if (keys.indexOf(key) >= 0) {
+        keys.splice(keys.indexOf(key), 1);
+      }
+    }
+
+    expect(keys).to.have.same.members([
+      "global",
+      "os",
+      "env",
+      "ci",
+      "node",
+      "browser",
+      "merge",
+      "toJSON",
+    ]);
 
     return true;
   }

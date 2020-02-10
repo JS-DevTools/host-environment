@@ -106,7 +106,9 @@ jobs:
     name: Code Coverage
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: test
+    needs:
+      - node_tests
+      - browser_tests
     steps:
       - name: Let Coveralls know that all tests have finished
         uses: coverallsapp/github-action@v1.0.1
@@ -119,7 +121,9 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: test
+    needs:
+      - node_tests
+      - browser_tests
 
     steps:
       - name: Checkout source

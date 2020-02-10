@@ -8,6 +8,7 @@ const { host } = require("./");
 
 module.exports = karmaConfig({
   sourceDir: "esm",
+  fixtures: "test/fixtures/**/*.js",
   browsers: {
     chrome: true,
     firefox: host.os.linux,

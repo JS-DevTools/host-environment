@@ -3,8 +3,12 @@
 # https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.yml
 
 
-# Test files
-spec: test/specs/**/*.spec.js
+spec:
+  # Test fixtures
+  - test/fixtures/**/*.js
+
+  # Test files
+  - test/specs/**/*.spec.js
 
 # Abort after first test failure
 bail: true

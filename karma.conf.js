@@ -23,7 +23,7 @@ module.exports = karmaConfig({
     customLaunchers: {
       // eslint-disable-next-line camelcase
       Edge_SauceLabs: {
-        version: "44.18362"
+        version: "18.17763"
       }
     }
   }

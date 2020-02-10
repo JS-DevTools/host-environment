@@ -16,7 +16,7 @@ describe("CI/CD host", () => {
     });
 
     it("host.ci.pr should be a boolean", () => {
-      expect(host.ci.name).to.be.a("boolean");
+      expect(host.ci.pr).to.be.a("boolean");
     });
 
     it("all other properties should be CI/CD constants", () => {

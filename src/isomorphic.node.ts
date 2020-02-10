@@ -57,7 +57,7 @@ function getCIInfo(): false | CIInfo {
   }
 
   return {
-    pr: ci.isPR,
     ...ci,
+    pr: ci.isPR,
   };
 }

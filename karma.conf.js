@@ -4,11 +4,16 @@
 
 "use strict";
 const { karmaConfig } = require("@jsdevtools/karma-config");
+const { host } = require("./");
 
 module.exports = karmaConfig({
   sourceDir: "esm",
   browsers: {
-    ie: true,
+    chrome: true,
+    firefox: host.os.linux,
+    safari: host.os.linux,    // SauceLabs
+    edge: host.os.linux,      // SauceLabs
+    ie: host.os.windows,
   },
   config: {
     // Prevent Karma-Config from using the "karma-host-environment" framework,

@@ -16,7 +16,7 @@ on:
     - cron: "0 0 1 * *"
 
 jobs:
-  test:
+  node_tests:
     name: Node ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -49,10 +49,42 @@ jobs:
       - name: Build the code
         run: npm run build
 
-      - name: Run Node.js tests
+      - name: Run tests
         run: npm run coverage:node
 
-      - name: Run browser tests
+      - name: Send code coverage results to Coveralls
+        uses: coverallsapp/github-action@v1.0.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+
+  browser_tests:
+    name: Browser Tests
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest     # Chrome, Firefox, Safari (via SauceLabs), Edge (via SauceLabs)
+          - windows-latest    # Internet Explorer
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the code
+        run: npm run build
+
+      - name: Run tests
         run: npm run coverage:browser
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}

@@ -9,7 +9,7 @@ const { host } = require("./");
 module.exports = karmaConfig({
   sourceDir: "esm",
   browsers: {
-    chrome: host.os.linux,
+    chrome: true,
     firefox: host.os.linux,
     safari: host.os.linux,    // SauceLabs
     edge: host.os.linux,      // SauceLabs

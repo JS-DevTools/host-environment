@@ -10,6 +10,7 @@ export function toJSON(this: Host): HostJSON {
     global: Object.prototype.toString.call(this.global),
     os: this.os,
     env: this.env,
+    ci: this.ci,
     node: this.node,
     browser: this.browser,
   };

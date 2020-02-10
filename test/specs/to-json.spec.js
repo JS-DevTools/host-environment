@@ -20,6 +20,7 @@ describe("host.toJSON()", () => {
       "global",
       "os",
       "env",
+      "ci",
       "browser",
       "node",
     ]);
@@ -41,6 +42,7 @@ describe("host.toJSON()", () => {
     let result = host.toJSON();
     expect(result.os).to.deep.equal(host.os);
     expect(result.env).to.deep.equal(host.env);
+    expect(result.ci).to.deep.equal(host.ci);
     expect(result.browser).to.deep.equal(host.browser);
     expect(result.node).to.deep.equal(host.node);
   });

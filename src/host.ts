@@ -65,6 +65,7 @@ export interface HostJSON {
   global: string;
   os: OSInfo;
   env: EnvironmentVariables;
+  ci: false | CIInfo;
   node: false | NodeInfo;
   browser: false | Browsers;
 }

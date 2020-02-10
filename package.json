@@ -67,5 +67,8 @@
     "tslint": "^6.0.0",
     "typescript": "^3.7.5",
     "typescript-tslint-plugin": "^0.5.5"
+  },
+  "dependencies": {
+    "@qawolf/ci-info": "^2.1.0"
   }
 }

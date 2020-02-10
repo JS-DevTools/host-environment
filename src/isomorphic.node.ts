@@ -1,4 +1,5 @@
-import { Global, Host, NodeInfo, OSInfo } from "./host";
+import * as ci from "@qawolf/ci-info";
+import { CIInfo, Global, Host, NodeInfo, OSInfo } from "./host";
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
@@ -11,6 +12,7 @@ export const host: Host = {
   node: getNodeInfo(),
   browser: false,
   env: process.env,
+  ci: getCIInfo(),
   merge,
   toJSON,
 };
@@ -44,4 +46,18 @@ function getOSInfo(): OSInfo {
   let mac = process.platform === "darwin";
   let linux = !windows && !mac;
   return { windows, mac, linux };
+}
+
+/**
+ * Returns information about the current CI/CD host.
+ */
+function getCIInfo(): false | CIInfo {
+  if (!ci.isCI) {
+    return false;
+  }
+
+  return {
+    pr: ci.isPR,
+    ...ci,
+  };
 }

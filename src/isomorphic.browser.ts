@@ -11,6 +11,7 @@ export const host: Host = {
   node: false,
   browser: getBrowserInfo(),
   env: {},
+  ci: false,
   merge,
   toJSON,
 };

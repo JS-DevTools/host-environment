@@ -24,6 +24,14 @@ export interface Host {
   env: EnvironmentVariables;
 
   /**
+   * Information about the CI/CD host.
+   * This property is `false` when not running in a known CI/CD host.
+   *
+   * @see https://www.npmjs.com/package/@qawolf/ci-info#supported-ci-tools
+   */
+  ci: false | CIInfo;
+
+  /**
    * Information about the Node host.
    * This property is `false` when running in a web browser.
    */
@@ -87,6 +95,54 @@ export interface OSInfoRecord {
  */
 export interface EnvironmentVariables {
   [key: string]: string | undefined;
+}
+
+/**
+ * Information about the CI/CD host.
+ */
+export interface CIInfo {
+  /**
+   * The friendly name of the CI/CD host (e.g. "Travis CI", "GitHub Actions", etc.)
+   */
+  name: string;
+
+  /**
+   * Whether the CI/CD job was triggered by a pull-request.
+   */
+  pr: boolean;
+
+  /**
+   * The CI/CD host name, as a boolean. (e.g. `TRAVIS`, `GITHUB_ACTIONS`, `TEAMCITY`, etc.)
+   */
+  CODEBUILD: boolean | undefined;
+  APPVEYOR: boolean | undefined;
+  AZURE_PIPELINES: boolean | undefined;
+  BAMBOO: boolean | undefined;
+  BITBUCKET: boolean | undefined;
+  BITRISE: boolean | undefined;
+  BUDDY: boolean | undefined;
+  BUILDKITE: boolean | undefined;
+  CIRCLE: boolean | undefined;
+  CIRRUS: boolean | undefined;
+  CODESHIP: boolean | undefined;
+  DRONE: boolean | undefined;
+  DSARI: boolean | undefined;
+  GITHUB_ACTIONS: boolean | undefined;
+  GITLAB: boolean | undefined;
+  GOCD: boolean | undefined;
+  HUDSON: boolean | undefined;
+  JENKINS: boolean | undefined;
+  MAGNUM: boolean | undefined;
+  NETLIFY: boolean | undefined;
+  NEVERCODE: boolean | undefined;
+  SAIL: boolean | undefined;
+  SEMAPHORE: boolean | undefined;
+  SHIPPABLE: boolean | undefined;
+  SOLANO: boolean | undefined;
+  STRIDER: boolean | undefined;
+  TASKCLUSTER: boolean | undefined;
+  TEAMCITY: boolean | undefined;
+  TRAVIS: boolean | undefined;
 }
 
 /**

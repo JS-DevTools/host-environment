@@ -73,7 +73,7 @@ export interface HostJSON {
 /**
  * The Global object. In Node, this is the `global` object. In browsers it's the `window` object.
  */
-export type Global = (NodeJS.Global | Window) & Record<string, unknown>;
+export type Global = Record<string, unknown>;
 
 /**
  * Information about the host operating system.

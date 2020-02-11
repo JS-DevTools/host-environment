@@ -7,7 +7,7 @@ import { toJSON } from "./to-json";
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
-  global: global as Global,
+  global: global as unknown as Global,
   os: getOSInfo(),
   node: getNodeInfo(),
   browser: false,

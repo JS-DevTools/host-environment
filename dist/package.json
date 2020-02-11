@@ -1,0 +1,35 @@
+{
+  "name": "host-environment",
+  "version": "X.X.X",
+  "description": "Easily detect what host environment your code is running in",
+  "keywords": [
+    "host",
+    "environment",
+    "browser",
+    "version",
+    "user agent",
+    "universal",
+    "isomorphic"
+  ],
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://jstools.dev/host-environment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JS-DevTools/host-environment.git"
+  },
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "@jsdevtools/host-environment": "X.X.X"
+  }
+}

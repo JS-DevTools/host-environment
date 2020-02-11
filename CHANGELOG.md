@@ -1,7 +1,7 @@
 Change Log
 =======================================
 All notable changes will be documented in this file.
-`host-environment` adheres to [Semantic Versioning](http://semver.org/).
+`@jsdevtools/host-environment` adheres to [Semantic Versioning](http://semver.org/).
 
 
 [v1.2.0](https://github.com/JS-DevTools/ono/tree/v1.2.0) (2020-02-10)

@@ -6,9 +6,9 @@ Host Environment
 [![Build Status](https://github.com/JS-DevTools/host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/host-environment/blob/master/.github/workflows/CI-CD.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/host-environment)
 
-[![npm](https://img.shields.io/npm/v/host-environment.svg)](https://www.npmjs.com/package/host-environment)
+[![npm](https://img.shields.io/npm/v/@jsdevtools/host-environment.svg)](https://www.npmjs.com/package/@jsdevtools/host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/host-environment.svg)](https://david-dm.org/JS-DevTools/host-environment)
-[![License](https://img.shields.io/npm/l/host-environment.svg)](LICENSE)
+[![License](https://img.shields.io/npm/l/@jsdevtools/host-environment.svg)](LICENSE)
 
 [![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/host-environment/blob/master/.github/workflows/CI-CD.yaml)
 
@@ -29,7 +29,7 @@ Example
 --------------------------
 
 ```javascript
-import host from "host-environment";
+import host from "@jsdevtools/host-environment";
 
 if (host.browser) {
   // Browser logic here
@@ -66,7 +66,7 @@ Installation
 Install using [npm](https://docs.npmjs.com/about-npm/):
 
 ```bash
-npm install host-environment
+npm install @jsdevtools/host-environment
 ```
 
 
@@ -82,7 +82,7 @@ const host = require("host-environment");
 When using a transpiler such as [Babel](https://babeljs.io/) or [TypeScript](https://www.typescriptlang.org/), or a bundler such as [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/), you can use **ECMAScript modules** syntax instead:
 
 ```javascript
-import host from "host-environment";
+import host from "@jsdevtools/host-environment";
 ```
 
 
@@ -213,7 +213,7 @@ To build the project locally on your computer:
 
 License
 --------------------------
-host-environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+Host Environment is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
 
 
 

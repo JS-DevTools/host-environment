@@ -1,5 +1,5 @@
 {
-  "name": "host-environment",
+  "name": "@jsdevtools/host-environment",
   "version": "1.2.0",
   "description": "Easily detect what host environment your code is running in",
   "keywords": [

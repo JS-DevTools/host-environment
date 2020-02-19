@@ -7,7 +7,9 @@ All notable changes will be documented in this file.
 [v2.0.0](https://github.com/JS-DevTools/ono/tree/v2.0.0) (2020-02-11)
 ----------------------------------------------------------------------------------------------------
 
-- The "host-environment" package is now just a wrapper around the scoped "@jsdevtools/host-environment" package
+- Moved Host Environment to the [@JSDevTools scope](https://www.npmjs.com/org/jsdevtools) on NPM
+
+- The "host-environment" NPM package is now just a wrapper around the scoped "@jsdevtools/host-environment" package
 
 
 [Full Changelog](https://github.com/JS-DevTools/ono/compare/v1.2.0...v2.0.0)

@@ -76,7 +76,7 @@ Usage
 When using Host Environment in Node.js apps, you'll probably want to use **CommonJS** syntax:
 
 ```javascript
-const host = require("host-environment");
+const host = require("@jsdevtools/host-environment");
 ```
 
 When using a transpiler such as [Babel](https://babeljs.io/) or [TypeScript](https://www.typescriptlang.org/), or a bundler such as [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/), you can use **ECMAScript modules** syntax instead:

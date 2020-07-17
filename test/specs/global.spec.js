@@ -1,3 +1,4 @@
+/* eslint-env node, browser */
 "use strict";
 
 const { host } = require("../../");

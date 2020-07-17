@@ -1,3 +1,4 @@
+/* eslint-env node */
 "use strict";
 
 const { host } = require("../../");
@@ -7,7 +8,7 @@ describe("Node.js environment", () => {
   if (typeof window === "object") {
 
     it("host.node should be false", () => {
-      expect(host.node).to.be.false;
+      expect(host.node).to.equal(false);
     });
 
   }
@@ -47,7 +48,7 @@ describe("Node.js environment", () => {
 
     it("host.node.vXX should be set", () => {
       let vXX = /^(v\d+)\.\d+\.\d+/.exec(process.version)[1];
-      expect(host.node[vXX]).to.be.true;
+      expect(host.node[vXX]).to.equal(true);
     });
 
     it("host.node should not have any other properties", () => {

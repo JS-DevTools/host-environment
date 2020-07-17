@@ -1,3 +1,4 @@
+/* eslint-env node */
 import * as ci from "@qawolf/ci-info";
 import { CIInfo, Global, Host, NodeInfo, OSInfo } from "./host";
 import { merge, mergeGlobalHost } from "./merge";

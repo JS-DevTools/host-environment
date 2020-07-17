@@ -19,7 +19,7 @@ describe("Browser environment", () => {
   if (typeof window === "undefined") {
 
     it("host.browser should be false", () => {
-      expect(host.browser).to.be.false;
+      expect(host.browser).to.equal(false);
     });
 
   }
@@ -46,7 +46,7 @@ describe("Browser environment", () => {
         let value = host.browser[key];
 
         if (key !== "mobile" && typeof value !== "object") {
-          expect(value).to.be.false;
+          expect(value).to.equal(false);
         }
       }
     });
@@ -73,7 +73,7 @@ describe("Browser environment", () => {
 
     it("browser.vXX should be set", () => {
       let browser = getCurrentBrowser();
-      expect(browser["v" + browser.majorVersion]).to.be.true;
+      expect(browser["v" + browser.majorVersion]).to.equal(true);
     });
 
     it("browser.mobile should be set", () => {

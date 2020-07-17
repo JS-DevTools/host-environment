@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 declare module "@qawolf/ci-info" {
   interface CIInfo {
     isCI: boolean;

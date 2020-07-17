@@ -34,19 +34,19 @@ describe("Environment variables", () => {
   if (typeof window === "object") {
 
     it("should not have any environment variables", () => {
-      expect(host.env).to.be.empty;
+      expect(Object.keys(host.env)).to.have.lengthOf(0);
     });
 
   }
   else {
 
     it("should have environment variables", () => {
-      expect(host.env).not.to.be.empty;
+      expect(Object.keys(host.env)).to.have.length.of.at.least(1);
     });
 
     it("should have standard environment variables", () => {
       let path = host.env.PATH || host.env.Path;
-      expect(path).not.to.be.empty;
+      expect(path).to.have.length.of.at.least(1);
     });
 
   }

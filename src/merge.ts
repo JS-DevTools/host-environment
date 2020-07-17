@@ -1,6 +1,5 @@
 import { Host } from "./host";
 
-// tslint:disable-next-line: no-any
 type POJO = Record<string, any>;
 
 /**

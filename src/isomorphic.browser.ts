@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import { Browsers, BrowsersRecord, Global, Host, OSInfo, OSInfoRecord } from "./host";
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
@@ -6,7 +7,7 @@ import { toJSON } from "./to-json";
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
-  global: window as Global,
+  global: window as unknown as Global,
   os: getOSInfo(),
   node: false,
   browser: getBrowserInfo(),
@@ -26,7 +27,7 @@ function getBrowserInfo(): Browsers {
   let mobile = /(Mobile|Android|iPhone|iPad)/.test(navigator.userAgent);
 
   let browsers: Browsers = {
-    IE: false,
+    IE: false,        // eslint-disable-line @typescript-eslint/naming-convention
     edge: false,
     chrome: false,
     firefox: false,

@@ -7,11 +7,11 @@ Host Environment
 [![License](https://img.shields.io/npm/l/@jsdevtools/host-environment.svg)](LICENSE)
 [![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/JS-DevTools/host-environment)
 
-[![Build Status](https://github.com/JS-DevTools/host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/host-environment/blob/master/.github/workflows/CI-CD.yaml)
+[![Build Status](https://github.com/JS-DevTools/host-environment/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/host-environment/actions)
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/host-environment/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/host-environment)
 [![Dependencies](https://david-dm.org/JS-DevTools/host-environment.svg)](https://david-dm.org/JS-DevTools/host-environment)
 
-[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/host-environment/blob/master/.github/workflows/CI-CD.yaml)
+[![OS and Browser Compatibility](https://jstools.dev/img/badges/ci-badges-with-ie.svg)](https://github.com/JS-DevTools/host-environment/actions)
 
 
 Host Environment is a [universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) library that makes it easy to detect what host environment your code is running in.  It lets you answer questions like:
@@ -193,7 +193,7 @@ This property is `false` when running in Node.js. When running in a browser it i
 
 Contributing
 --------------------------
-Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/host-environment/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [Open an issue](https://github.com/JS-DevTools/host-environment/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/host-environment/pulls).
 
 #### Building
 To build the project locally on your computer:

@@ -24,6 +24,23 @@ describe("Browser environment", () => {
 
   }
   else {
+    /* eslint-env browser */
+
+    it("host.path should be the current page", () => {
+      expect(host.path).to.equal(window.location.href);
+    });
+
+    it("host.url should be the current page", () => {
+      expect(host.url.href).to.deep.equal(window.location.href);
+    });
+
+    it("host.cwd should be the parent directory of the current page", () => {
+      expect(window.location.href).to.contain(host.cwd);
+    });
+
+    it("host.cwdURL should be the parent directory of the current page", () => {
+      expect(window.location.href).to.contain(host.cwdURL.href);
+    });
 
     it("host.browser should be an object", () => {
       expect(host.browser).to.be.an("object");

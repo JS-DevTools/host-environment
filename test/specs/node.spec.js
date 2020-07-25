@@ -13,6 +13,24 @@ describe("Node.js environment", () => {
 
   }
   else {
+    /* eslint-env node */
+
+    it("host.path should be the execPath", () => {
+      expect(host.path).to.equal(process.execPath);
+    });
+
+    it("host.url should be a file:// URL", () => {
+      expect(host.url.href).to.match(/^file:\/\//);
+    });
+
+    it("host.cwd should be the current working directory", () => {
+      expect(host.cwd).to.equal(process.cwd());
+    });
+
+    it("host.cwdURL should be a file:// URL", () => {
+      expect(host.cwdURL.href).to.match(/^file:\/\//);
+    });
+
 
     it("host.node should be an object", () => {
       expect(host.node).to.be.an("object");

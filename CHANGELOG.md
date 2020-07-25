@@ -4,6 +4,19 @@ All notable changes will be documented in this file.
 `@jsdevtools/host-environment` adheres to [Semantic Versioning](http://semver.org/).
 
 
+
+[v2.1.0](https://github.com/JS-DevTools/ono/tree/v2.1.0) (2020-07-25)
+----------------------------------------------------------------------------------------------------
+
+- Added `host.path` and `host.url`, which provide the host program's path
+
+- Added `host.cwd` and `host.cwdURL`, which provide the host's current directory
+
+
+[Full Changelog](https://github.com/JS-DevTools/ono/compare/v2.0.4...v2.1.0)
+
+
+
 [v2.0.0](https://github.com/JS-DevTools/ono/tree/v2.0.0) (2020-02-11)
 ----------------------------------------------------------------------------------------------------
 
@@ -13,6 +26,7 @@ All notable changes will be documented in this file.
 
 
 [Full Changelog](https://github.com/JS-DevTools/ono/compare/v1.2.0...v2.0.0)
+
 
 
 [v1.2.0](https://github.com/JS-DevTools/ono/tree/v1.2.0) (2020-02-10)

@@ -102,6 +102,18 @@ API
 ### `host.global`
 When running in a web browser, `host.global` is a reference to the `window` object.  When running in Node.js, it's a reference to the `global` object.
 
+### `host.path`
+The path of the host process, as a string. When running in Node.js, this is set to [`process.execPath`](https://nodejs.org/api/process.html#process_process_execpath). When running in a web browser, it is the URL of the web page (`window.location.href`).
+
+### `host.url`
+The same as `host.path`, but as a parsed [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL).  When running in Node.js, this will be a `file://` URL.
+
+### `host.cwd`
+The current working directory, as a string. When running in Node.js, this is set to [`process.cwd`](https://nodejs.org/api/process.html#process_process_cwd). When running in a web browser, it is the parent directory of the current web page
+
+### `host.cwdURL`
+The same as `host.cwd`, but as a parsed [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL).  When running in Node.js, this will be a `file://` URL.
+
 
 ### `host.os`
 This property is an object with the following structure:

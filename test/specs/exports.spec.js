@@ -20,6 +20,10 @@ describe("package exports", () => {
 
     expect(keys).to.have.same.members([
       "global",
+      "path",
+      "url",
+      "cwd",
+      "cwdURL",
       "os",
       "env",
       "ci",

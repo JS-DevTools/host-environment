@@ -11,6 +11,30 @@ export interface Host {
   global: Global;
 
   /**
+   * The path of the host process.
+   * In Node, this is `process.execPath`. In web browsers, it is the URL of the current page.
+   */
+  path: string;
+
+  /**
+   * The URL of the host process.
+   * In Node, this will be a "file://" URL. In web browsers it will be an "http://" or "https://" URL.
+   */
+  url: URL;
+
+  /**
+   * The current working directory.
+   * In Node, this is `process.cwd()`. In web browsers it's the parent directory of the current page URL.
+   */
+  cwd: string;
+
+  /**
+   * The current working directory as a URL.
+   * In Node, this will be a "file://" URL. In web browsers it will be an "http://" or "https://" URL.
+   */
+  cwdURL: URL;
+
+  /**
    * Information about the host operating system.
    * In web browsers the OS info is inferred from the user agent.
    */

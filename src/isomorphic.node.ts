@@ -1,14 +1,22 @@
 /* eslint-env node */
 import * as ci from "@qawolf/ci-info";
+import { pathToFileURL } from "url";
 import { CIInfo, Global, Host, NodeInfo, OSInfo } from "./host";
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
+
+const cwd = process.cwd();
+const execPath = process.execPath;
 
 /**
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
   global: global as unknown as Global,
+  path: execPath,
+  url: pathToFileURL(execPath),
+  cwd,
+  cwdURL: pathToFileURL(cwd),
   os: getOSInfo(),
   node: getNodeInfo(),
   browser: false,

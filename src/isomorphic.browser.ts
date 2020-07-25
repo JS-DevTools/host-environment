@@ -3,11 +3,18 @@ import { Browsers, BrowsersRecord, Global, Host, OSInfo, OSInfoRecord } from "./
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
+let url = new URL(window.location.href);
+let cwdURL = new URL(".", url);
+
 /**
  * Information about the host environment that the code is running in.
  */
 export const host: Host = {
   global: window as unknown as Global,
+  url,
+  path: url.href,
+  cwdURL,
+  cwd: cwdURL.href,
   os: getOSInfo(),
   node: false,
   browser: getBrowserInfo(),

@@ -3,10 +3,6 @@ import { Browsers, BrowsersRecord, Global, Host, OSInfo, OSInfoRecord } from "./
 import { merge, mergeGlobalHost } from "./merge";
 import { toJSON } from "./to-json";
 
-// Determine whether this browser supports creating URL objects
-// eslint-disable-next-line @typescript-eslint/brace-style
-const canCreateURL = (() => { try { return Boolean(new URL("http://example.com")); } catch (e) { return false; } })();
-
 const url = createURL(window.location.href);
 const cwdURL = createURL(".", url);
 
@@ -35,11 +31,11 @@ mergeGlobalHost(host, host.global.host);
  * Creates a URL object from a URL string
  */
 function createURL(url: string, base?: URL): URL {
-  if (canCreateURL) {
+  try {
     return new URL(url, base);
   }
-  else {
-    // Poor-man's polyfill for URL on Internet Explorer
+  catch (_) {
+    // Poor-man's polyfill for browsers that don't support the URL class
     return { href: base ? base.href : url } as URL;
   }
 }
